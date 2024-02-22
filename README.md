@@ -14,16 +14,17 @@ A preemptive fixed priority driven Rate Monotonic scheduler has been implemented
 ```
 git clone https://github.com/EnigmaRagesh/RateMonotonic_Scheduler.git
 cd RateMonotonic_Scheduler
-python3 RM_scheduling . py
+python3 RM_scheduling.py input.txt
+Note: Please Take a look at the input.txt file for the format of the input.
 ```
 ## Sample input 1
 
 |        | Period  | WCET |
 |:------:|:-------:|:----:|
-| Task 1 |    20   |   8  |
-| Task 2 |    5    |   1  |
-| Task 3 |    5    |   1  |
-| Task 4 |    5    |   1  |
+| Task1 |    20   |   8  |
+| Task2 |    5    |   1  |
+| Task3 |    5    |   1  |
+| Task4 |    5    |   1  |
 ## Gantt Chart output
 <img src="Figure_1.png" width="800">
 
@@ -31,9 +32,9 @@ python3 RM_scheduling . py
 
 |        | Period  | WCET |
 |:------:|:-------:|:----:|
-| Task 1 |    20   |   8  |
-| Task 2 |    5    |   2  |
-| Task 3 |    10   |   2  |
+| Task1 |    20   |   8  |
+| Task2 |    5    |   2  |
+| Task3 |    10   |   2  |
 ## Gantt Chart output
 <img src="Figure_2.png" width="800">
 
@@ -41,9 +42,9 @@ python3 RM_scheduling . py
 
 |        | Period  | WCET |
 |:------:|:-------:|:----:|
-| Task 1 |    30   |  15  |
-| Task 2 |    5    |   1  |
-| Task 3 |    15   |   3  |
+| Task1 |    30   |  15  |
+| Task2 |    5    |   1  |
+| Task3 |    15   |   3  |
 
 ## Gantt Chart output
 <img src="Figure_3.png" width="800">

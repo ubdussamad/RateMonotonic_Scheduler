@@ -1,23 +1,30 @@
 {
     "0": {
-        "WCET": 15,
         "Releases": 1.0,
-        "AvgRespTime": 27,
-        "AvgWaitTime": 4,
-        "Period": 30
+        "Period": 20,
+        "WCET": 8,
+        "AvgRespTime": 20,
+        "AvgWaitTime": 3
     },
     "1": {
-        "WCET": 3,
-        "Releases": 2.0,
-        "AvgRespTime": 4,
-        "AvgWaitTime": 1,
-        "Period": 15
+        "Releases": 4.0,
+        "Period": 5,
+        "WCET": 1,
+        "AvgRespTime": 1,
+        "AvgWaitTime": 0
     },
     "2": {
+        "Releases": 4.0,
+        "Period": 5,
         "WCET": 1,
-        "Releases": 6.0,
-        "AvgRespTime": 1,
-        "AvgWaitTime": 0,
-        "Period": 5
+        "AvgRespTime": 3,
+        "AvgWaitTime": 2
+    },
+    "3": {
+        "Releases": 4.0,
+        "Period": 5,
+        "WCET": 1,
+        "AvgRespTime": 2,
+        "AvgWaitTime": 1
     }
 }

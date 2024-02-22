@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import statistics as st
 from collections import defaultdict
-
+import sys
 tasks = dict()
 RealTime_task = dict()
 metrics = defaultdict(dict)
@@ -40,21 +40,34 @@ def Read_data():
 
 	dList = {}
 
-	n = int(input("\n \t\tEnter number of Tasks:"))
-	# Storing data in a dictionary
-	for  i in range(n):
-		dList["TASK_%d"%i] = {"start":[],"finish":[]}
 
-	dList["TASK_IDLE"] = {"start":[],"finish":[]}
+	
+	# Check is there is an argument
+	if len(sys.argv) > 1:
+		print("Reading from file: %s" % sys.argv[1])
+		n = 0
+		dList["TASK_IDLE"] = {"start": [], "finish": []}
+	else:
+		print("No file Provided. Exiting..")
+		exit(1)
 
-	for i in range(n):
-		tasks[i] = {}
-		print("\n\n\n Enter Period of task T",i,":")
-		p = input()
-		tasks[i]["Period"] = int(p)
-		print("Enter the WCET of task C",i,":")
-		w = input()
-		tasks[i]["WCET"] = int(w)
+		
+
+	with open(sys.argv[1], 'r') as f:
+		for idx, task_info_line in enumerate(f.read().splitlines()):
+			n = n + 1
+			dList["TASK_%d" % idx] = {"start": [], "finish": []}
+
+			task_info = task_info_line.split()
+			print(task_info)
+			tasks[idx] = {}
+			if task_info[0] == "Task" + str(idx+1):
+				tasks[idx]["Period"] = int(task_info[1])
+				tasks[idx]["WCET"] = int(task_info[2])
+
+	
+				
+
 
 	# Writing the dictionary into a JSON file
 	with open('tasks.json','w') as outfile:
